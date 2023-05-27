@@ -2,6 +2,7 @@ import pandas as pd
 import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+import joblib
 
 # load the data
 df = pd.read_csv('diabetes.csv')
@@ -20,5 +21,8 @@ print("[INFO] model trained")
 score = model.score(X_test, y_test)
 print(score)
 
-# saving of model
-pickle.dump(model, open("dib_79.pkl", "wb"))
+# saving of model using pickle
+# pickle.dump(model, open("dib_79.pkl", "wb"))
+
+# saving of model using joblib
+joblib.dump(model, "dib_79_joblib.pkl")
