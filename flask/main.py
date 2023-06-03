@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import joblib
 
-model = joblib.load(r"..\model_saving\dib_79.pkl")
+model = joblib.load("dib_79_joblib.pkl")
 
 # initialise the app
 app = Flask(__name__)
